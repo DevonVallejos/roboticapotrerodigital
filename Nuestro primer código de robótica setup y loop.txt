@@ -1,0 +1,47 @@
+Ejemplo parpadeo del LED integrado al pin N°13:
+
+//Nuestro programa empieza a ejecutarse en el SETUP, en donde determinamos los pines de la placa Arduino que
+//vamos a utilizar y de que forma vamos a hacerlo, si como un pin de entrada(INPUT) o de salida(OUTPUT).
+
+ 
+void setup()
+{
+  pinMode(13, OUTPUT);
+}
+
+//Nuestro LOOP, es donde van las instrucciones que tiene que realizar nuestra placa, es nuestro algoritmo o nuetro
+//bucle acá determinamos que acciones va a realizar nuestra placa Arduino dependiendo de las funciones que utilicemos
+//y los valores que le demos, todo va a depender de como lo programemos.
+
+
+void loop()
+{
+  digitalWrite(13, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(13, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(13, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(13, HIGH);
+}
+
+
+//Ejemplo de que la ejecución de setup se realiza solo una vez, lo contrario al loop:
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  digitalWrite(13, HIGH);
+  delay(5000);
+}
+
+void loop()
+{
+  digitalWrite(13, HIGH);
+  delay(500); // Wait for 1000 millisecond(s)
+  digitalWrite(13, LOW);
+  delay(500); // Wait for 1000 millisecond(s)
+  digitalWrite(13, HIGH);
+  delay(500); // Wait for 1000 millisecond(s)
+  digitalWrite(13, HIGH);
+}
